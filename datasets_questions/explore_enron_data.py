@@ -64,8 +64,11 @@ print most_paid, highest_payment
 pprint(enron_data['SKILLING JEFFREY K'])
 
 # How many folks have a quantified salary?
-print len(dict((key, value) for key, value in enron_data.items() if value["salary"] != 'NaN'))
-
+countsalary=0
+for keys in enron_data.keys():
+    if enron_data[keys]["salary"]!= "NaN":
+        countsalary +=1
+print countsalary
 # How many with a known email address?
 print len(dict((key, value) for key, value in enron_data.items() if value["email_address"] != 'NaN'))
 
